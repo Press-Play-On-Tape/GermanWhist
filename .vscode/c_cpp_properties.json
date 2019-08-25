@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "C:\\Users\\simon.holmes\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\**",
+                "C:\\Users\\simon.holmes\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.6.20\\**",
+                "/Users/simonholmes/Library/Arduino15/packages/arduino/hardware/avr/1.6.22/**",
+                "/Users/simonholmes/Library/Arduino15/packages/arduino/tools/**"
+            ],
+            "forcedInclude": [
+                "C:\\Users\\simon.holmes\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.6.20\\cores\\arduino\\Arduino.h",
+                "/Users/simonholmes/Library/Arduino15/packages/arduino/hardware/avr/1.6.22/cores/arduino/Arduino.h"
+            ],
+            "intelliSenseMode": "msvc-x64",
+            "compilerPath": "C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Tools/MSVC/14.11.25503/bin/Hostx64/x64/cl.exe",
+            "cStandard": "c11",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}

@@ -1,0 +1,6 @@
+{
+    "board": "arduino:avr:leonardo",
+    "sketch": "Whist/Whist.ino",
+    "output": "../build",
+    "port": "/dev/cu.usbmodem1411"
+}
