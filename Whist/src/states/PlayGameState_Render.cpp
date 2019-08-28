@@ -256,8 +256,7 @@ void PlayGameState::drawTrick(StateMachine & machine) {
 // 
 void PlayGameState::drawTableTop(StateMachine & machine) {
 
-	auto & arduboy = machine.getContext().arduboy;
-
+  auto & arduboy = machine.getContext().arduboy;
   arduboy.fillRect(0, 60, 128, 64, BLACK);
   arduboy.drawFastHLine(0, 61, 128);
   arduboy.drawHorizontalDottedLine(0, 127, 63);
@@ -272,7 +271,7 @@ void PlayGameState::drawTableTop(StateMachine & machine) {
 void PlayGameState::drawPlayerHands(StateMachine & machine) {
 
   auto & gameStats = machine.getContext().gameStats;
-	auto & player1 = gameStats.player1;
+  auto & player1 = gameStats.player1;
 
   // Player ..
 

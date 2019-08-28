@@ -76,4 +76,6 @@ void BaseState::drawDealer(StateMachine & machine, int8_t xPos, uint8_t yPos, De
 
   }
 
+  arduboy.fillRect(0, 55, 128, 59, WHITE);
+
 }
