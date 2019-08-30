@@ -11,13 +11,6 @@ void PlayGameState::resetPlay(StateMachine & machine) {
 	auto & player1 = gameStats.player1;
 	auto & player2 = gameStats.player2;
 
-  // memset(this->playedCards, Constants::NoCard, (sizeof(this->playedCards) / sizeof(this->playedCards[0])));
-
-	// this->playIdx = 0;
-
-	// player1.setGo(false);
-	// player2.setGo(false);
-
 }
 
 
@@ -31,19 +24,6 @@ void PlayGameState::resetHand(StateMachine & machine) {
 	player1.resetHand(false);
 	player2.resetHand(false);
 	deck.shuffle();
-
-  // memset(this->playedCards, Constants::NoCard, (sizeof(this->playedCards) / sizeof(this->playedCards[0])));
-
-	// this->cribState = CribState::Empty;
-	// this->highlightCard = 0;
-	// this->counter = 0;
-	// this->computerDiscard1 = 0;
-	// this->computerDiscard2 = 0;
-	// this->playIdx = 0;
-	// this->turnUp = Constants::NoCard;
-	// this->highlight = true;
-	// this->player1Counter = 0;
-	// this->player2Counter = 0;
 	
 }
 

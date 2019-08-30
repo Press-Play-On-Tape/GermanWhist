@@ -198,22 +198,6 @@ uint8_t Player::playCard_PhaseOne(Suit trumps, uint8_t exposedCard, uint8_t oppo
   // How desirable is this card ?
  
   uint8_t desirability = exposedCardVal + (exposedCardSuit == trumps ? 6 : 0);
-
-
-//   // If we have higher cards in our hand of the same suit then the score should be raised ..
- 
-//   for (uint8_t x = 0; x < this->handIdx; x++) {
- 
-//     if ((CardUtils::getCardValue(hand[x]) > exposedCardVal) &&
-//         (CardUtils::getCardSuit(hand[x]) == exposedCardSuit)) {
- 
-//       desirability++;
-// Serial.print("In hand: ");
-// Serial.println(desirability);
-       
-//     }
-       
-//   }
  
  
   // If we have played a higher card previously then the score should also be raised ..
@@ -228,9 +212,7 @@ uint8_t Player::playCard_PhaseOne(Suit trumps, uint8_t exposedCard, uint8_t oppo
     }
        
   }
- 
- Serial.print("Desire: ");
- Serial.println(desirability);
+
 
   uint8_t losingCard = Constants::NoCard;
   uint8_t winningCard = Constants::NoCard;
@@ -239,14 +221,6 @@ uint8_t Player::playCard_PhaseOne(Suit trumps, uint8_t exposedCard, uint8_t oppo
   // Are we leading?
  
   if (opponentsCard == Constants::NoCard) {
-Serial.println("a1"); 
-    this->rankCards(trumps, exposedCard, true);
-Serial.print("Rank :");
-for (uint8_t x = 0; x < this->handIdx; x++) {
-Serial.print(this->rank[x]);
-Serial.print(" ");
-}
-Serial.println(" ");
 
 
     // Select an appropriate card ..
@@ -254,35 +228,26 @@ Serial.println(" ");
     switch (desirability) {
  
       case 0 ... 7:
-Serial.println("a2"); 
         return getCardByRank_LowestInRange(0, 255);
  
       case 8 ... 13:
         {
-Serial.println("a3"); 
           uint8_t selectedCard = getCardByRank_HighestInRange(4, 9);
- Serial.print("a31 "); 
-Serial.println(selectedCard); 
 
           // If we couldn't find an appropriate card, then look for a losing card ..
  
           if (selectedCard == Constants::NoCard)    selectedCard = getCardByRank_HighestInRange(0, 4);
-Serial.print("a32 "); 
-Serial.println(selectedCard); 
  
 
           // If we couldn't find an appropriate card, then look for a losing card ..
  
           if (selectedCard == Constants::NoCard)    selectedCard = getCardByRank_LowestInRange(9, 255);
-Serial.print("a33 "); 
-Serial.println(selectedCard);  
           return selectedCard;
  
         }
         break;
  
       case 14 ... 255:
-Serial.println("a4"); 
         return getCardByRank_HighestInRange(0, 255);
  
     }
@@ -317,13 +282,7 @@ Serial.println("a4");
  
 
     // If we can play the suit then return a card ..
- Serial.print("Losing: ");
- CardUtils::printCard(losingCard);
- Serial.print(", winning: ");
- CardUtils::printCard(winningCard);
- Serial.println("");
 
-    // Assume range of desirability between 2 and 20 ish
     if (desirability > 16 && winningCard != Constants::NoCard)    return winningCard;
     if (desirability <= 6 && losingCard  != Constants::NoCard)    return losingCard;
  
@@ -357,7 +316,6 @@ Serial.println("a4");
       }
  
       if (cardToPlay != Constants::NoCard) {
-Serial.println("b2 trump");        
         return cardToPlay;
       }
  
@@ -379,7 +337,6 @@ Serial.println("b2 trump");
  
       }
  
-Serial.println("b3 random");        
       return lowestCard;
  
     }
@@ -456,16 +413,6 @@ uint8_t Player::playCard_PhaseTwo(Suit trumps, uint8_t opponentsCard) {
          
     }
 
-    Serial.print("Losing: (");
-    Serial.print(losingCard);
-    Serial.print(") ");
-    CardUtils::printCard(losingCard);
-    Serial.print(", winning: (");
-    Serial.print(winningCard);
-    Serial.print(") ");
-    CardUtils::printCard(winningCard);
-    Serial.println("");
-
 
     // If we can play the suit then return a card ..
  
@@ -493,7 +440,6 @@ uint8_t Player::playCard_PhaseTwo(Suit trumps, uint8_t opponentsCard) {
       }
  
       if (cardToPlay != Constants::NoCard) {
-        Serial.println("trump it");        
         return cardToPlay;
       }
  
@@ -514,7 +460,6 @@ uint8_t Player::playCard_PhaseTwo(Suit trumps, uint8_t opponentsCard) {
  
       }
  
-      Serial.println("random");        
       return randomCard;
  
     }

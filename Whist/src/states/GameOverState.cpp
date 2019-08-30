@@ -60,15 +60,9 @@ void GameOverState::render(StateMachine & machine) {
 
 	auto & arduboy = machine.getContext().arduboy;
 
-	// for (int16_t x = -20; x < 154; x = x + 28) {
-	// 	SpritesB::drawSelfMasked(x - this->counter, 45, Images::TitleScreen_Cards, 0);
-	// }
-
 	Message message;
 
 	if (this->index < 2) {
-		//SpritesB::drawOverwrite(0, 0, Images::GameOver_01, 0);
-		//SpritesB::drawOverwrite(1, 19, Images::GameOver_02, 0);
 		SpritesB::drawExternalMask((this->index == 0 ? 9 : 40), 31, Images::Hand, Images::Hand_Mask, 0, 0);
 	}
 

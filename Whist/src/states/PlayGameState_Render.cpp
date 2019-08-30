@@ -100,16 +100,6 @@ void PlayGameState::render(StateMachine & machine) {
       drawDealer(machine, 88, 12, this->message.dealerFace, this->message);
       drawTableTop(machine);
 
-
-      
-      // arduboy.fillRect(10, 12, 28, 7, WHITE);
-      // font3x5.setCursor(21, 12);
-      // font3x5.print("Me");
-
-      // arduboy.fillRect(46, 12, 28, 7, WHITE);
-      // font3x5.setCursor(54, 12);
-      // font3x5.print("You");
-
       arduboy.fillRect(Constants::OverallScore_X - 2, Constants::OverallScore_Y - 11, 32, 7, WHITE);
       font3x5.setCursor(Constants::OverallScore_X + 11, Constants::OverallScore_Y - 11);
       font3x5.print("Me");
@@ -135,25 +125,6 @@ void PlayGameState::render(StateMachine & machine) {
     this->message.renderRequired = false;
   }
 
-  // arduboy.clear();
-
-  //     arduboy.fillRect(Constants::OverallScore_X - 2, Constants::OverallScore_Y - 11, 32, 7, WHITE);
-  //     font3x5.setCursor(Constants::OverallScore_X + 11, Constants::OverallScore_Y - 11);
-  //     font3x5.print("Me");
-
-  //     arduboy.fillRect(Constants::OverallScore_X + 34, Constants::OverallScore_Y - 11, 32, 7, WHITE);
-  //     font3x5.setCursor(Constants::OverallScore_X + 44, Constants::OverallScore_Y - 11);
-  //     font3x5.print("You");
-
-  //     drawNumber(machine, Constants::OverallScore_X + 0, Constants::OverallScore_Y + 0, player2.getOverallScore() / 10);
-  //     drawNumber(machine, Constants::OverallScore_X + 15, Constants::OverallScore_Y + 0, player2.getOverallScore() % 10);
-
-  //     SpritesB::drawSelfMasked(Constants::OverallScore_X + 31, Constants::OverallScore_Y + 8, Images::Bullet, 0);
-  //     SpritesB::drawSelfMasked(Constants::OverallScore_X + 31, Constants::OverallScore_Y + 13, Images::Bullet, 0);
-
-  //     drawNumber(machine, Constants::OverallScore_X + 36, Constants::OverallScore_Y + 0, player1.getOverallScore() / 10);
-  //     drawNumber(machine, Constants::OverallScore_X + 51, Constants::OverallScore_Y + 0, player1.getOverallScore() % 10);
-
 }
 
 
@@ -172,13 +143,11 @@ void PlayGameState::drawPhaseOne_Scores(StateMachine & machine) {
     SpritesB::drawErase(27, 1, Images::Suits, static_cast<uint8_t>(this->trumps));
   }
 
-  //if (!this->message.renderRequired) {
-    arduboy.fillRect(93, 0, 34, 8);
-    font3x5.setCursor(96, 0);
-    if (this->handNo < 10 ) font3x5.print("0");
-    font3x5.print(this->handNo);
-    font3x5.print(" of 13");
-  //}
+  arduboy.fillRect(93, 0, 34, 8);
+  font3x5.setCursor(96, 0);
+  if (this->handNo < 10 ) font3x5.print("0");
+  font3x5.print(this->handNo);
+  font3x5.print(" of 13");
 
 }
 

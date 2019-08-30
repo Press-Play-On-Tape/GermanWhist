@@ -63,9 +63,9 @@ static void CardUtils::printCard(uint8_t cardNumber) {
   }
   switch (cardNumber / 13) {
 
-    case 2: Serial.print("S"); break;
+    case 1: Serial.print("S"); break;
+    case 2: Serial.print("D"); break;
     case 3: Serial.print("C"); break;
-    case 1: Serial.print("D"); break;
     case 0: Serial.print("H"); break;
 
   }

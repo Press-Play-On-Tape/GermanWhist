@@ -2,8 +2,8 @@ Graphics&nbsp;&nbsp;  @vampirics<br>
 Code&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@filmote<br>
 
 Source &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Source Code](https://github.com/Press-Play-On-Tape/Whist)<br>
-Hex &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Hex File](https://github.com/Press-Play-On-Tape/Whist/tree/master/distributable/Shist.hex)<br>
-Emulator &nbsp;&nbsp;&nbsp;[Project ABE Emulator](https://felipemanga.github.io/ProjectABE/?hex=https://raw.githubusercontent.com/Press-Play-On-Tape/Shist/master/distributable/Whist.hex)
+Hex &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Hex File](https://github.com/Press-Play-On-Tape/Whist/tree/master/distributable/Whist.100.hex)<br>
+Emulator &nbsp;&nbsp;&nbsp;[Project ABE Emulator](https://felipemanga.github.io/ProjectABE/?hex=https://raw.githubusercontent.com/Press-Play-On-Tape/Whist/master/distributable/Whist.100.hex)
 <br>
 <br>
 

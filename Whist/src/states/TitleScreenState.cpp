@@ -54,6 +54,6 @@ void TitleScreenState::update(StateMachine & machine) {
 //
 void TitleScreenState::render(StateMachine & machine) {
 
-	SpritesB::drawOverwrite(19, 10, Images::TitleScreen, 0);
+	SpritesB::drawOverwrite(0, 0, Images::TitleScreen, 0);
 
 }

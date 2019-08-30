@@ -78,17 +78,13 @@ void PlayGameState::update(StateMachine & machine) {
 				case 12 ... 82:
 					
 					skipSequence(machine, 82);
+					if (gameStats.playerDealer == WhichPlayer::Player2) {
+						saveMessage(F("Your turn to start@"), 1, 81, DealerFace::Normal, BubbleAlignment::Centre);
+					}
+					else {
+						saveMessage(F("My turn to start@"), 1, 71, DealerFace::Normal, BubbleAlignment::Centre);
+					}
 					
-					//if (this->firstHand) {
-					
-						if (gameStats.playerDealer == WhichPlayer::Player2) {
-							saveMessage(F("Your turn to start@"), 1, 81, DealerFace::Normal, BubbleAlignment::Centre);
-						}
-						else {
-							saveMessage(F("My turn to start@"), 1, 71, DealerFace::Normal, BubbleAlignment::Centre);
-						}
-					
-					//}
 					break;
 
 				case 83:
@@ -104,12 +100,8 @@ void PlayGameState::update(StateMachine & machine) {
 						this->viewState = ViewState::PhaseOne_ComputersTurn;
 					}
 
-player1.printHand(1);
-player2.printHand(2);
-Serial.print("Turn: ");
-CardUtils::printCard(this->turnUp);
-Serial.println("");
 					break;
+
 			}
 
 			break;
@@ -169,9 +161,6 @@ Serial.println("");
 				case 36:
 					this->player2Card = player2.playCard_PhaseOne(this->trumps, this->turnUp, this->player1Card);
 					player2.removeFromHand(player2.getCardIndex(this->player2Card));
-Serial.print("Comp played: ");
-CardUtils::printCard(this->player2Card);
-Serial.println("");
 					break;
 
 				case 37 ... 42:
@@ -351,11 +340,6 @@ Serial.println("");
 				case 36:
 					this->player2Card = player2.playCard_PhaseTwo(this->trumps, this->player1Card);
 					player2.removeFromHand(player2.getCardIndex(this->player2Card));
-Serial.print("Comp played..: ");
-CardUtils::printCard(this->player2Card);
-Serial.println("");
-player1.printHand(1);
-player2.printHand(2);
 					break;
 
 				case 37 ... 42:
